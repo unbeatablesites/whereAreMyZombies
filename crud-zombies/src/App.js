@@ -11,11 +11,32 @@ class App extends Component {
     return (
       <Router>
         <div className="container">
-          <nav className="navbar navbar-expand-lg navbar-light bg-light"> 
-          <a classname="navbar-brand">
-            <img src={logo} width="30" height="30" alt="World 50 zombie app :)"/>
-          </a>
-          <Link to="/"
+          <nav className="navbar navbar-expand-lg navbar-light bg-light">
+            <a classname="navbar-brand">
+              <img
+                src={logo}
+                width="30"
+                height="30"
+                alt="World 50 zombie app :)"
+              />
+            </a>
+            <Link to="/" className="nav-brand">
+              Where Are My Zombies App
+            </Link>
+            <div className="collpase nav-collapse">
+              <ul className="navbar-nav mr-auto">
+                <li className="navbar-item">
+                  <Link to="/" className="nav-link">
+                    All Zombies
+                  </Link>
+                </li>
+                <li className="navbar-item">
+                  <Link to="/create" className="nav-link">
+                    Add Zombies
+                  </Link>
+                </li>
+              </ul>
+            </div>
           </nav>
           <Route path="/" exact component={ZombieList} />
           <Route path="/edit/:id" component={EditZombie} />
