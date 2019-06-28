@@ -4,13 +4,19 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import CreateZombie from "./components/create-zombie.component";
 import EditZombie from "./components/edit-zombie.component";
 import ZombieList from "./components/zombie-list.component";
+import logo from "./logo.png";
 
 class App extends Component {
   render() {
     return (
       <Router>
         <div className="container">
-          <h2>Where are my zombies</h2>
+          <nav className="navbar navbar-expand-lg navbar-light bg-light"> 
+          <a classname="navbar-brand">
+            <img src={logo} width="30" height="30" alt="World 50 zombie app :)"/>
+          </a>
+          <Link to="/"
+          </nav>
           <Route path="/" exact component={ZombieList} />
           <Route path="/edit/:id" component={EditZombie} />
           <Route path="/create" component={CreateZombie} />
