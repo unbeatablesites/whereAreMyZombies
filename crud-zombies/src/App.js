@@ -11,6 +11,7 @@ class App extends Component {
         </div>
         <Route path="/" exact component={ZombieList} />
         <Route path="/edit/:id" component={EditZombie} />
+        <Route path="/create" component={CreateZombie} />
       </Router>
     );
   }
