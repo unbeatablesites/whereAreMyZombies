@@ -59,16 +59,71 @@ export default class CreateZombie extends Component {
   render() {
     return (
       <div style={{ marginTop: 20 }}>
-        <h3>Add a Zombie</h3>
+        <h3>Add a new Zombie!</h3>
         <form onSubmit={this.onSubmit}>
           <div className="form-group">
-            <label type="text">Description:</label>
+            <label type="text">What should we call this zombie:</label>
             <input
               type="text"
               className="form-control"
               value={this.state.zombie_description}
               onChange={this.onChangeZombieDescription}
             />
+          </div>
+
+          <div className="form-group">
+            <label type="text">
+              Who is responsible for capturing this Zombie:
+            </label>
+            <input
+              type="text"
+              className="form-control"
+              value={this.state.zombie_responsible}
+              onChange={this.onChangeZombieResponsible}
+            />
+          </div>
+
+          <div className="form-group">
+            <label type="text">
+              What building shall we put this Zombie into:
+            </label>
+
+            <div className="form-check form-check-inline">
+              <input
+                className="from-check-input"
+                type="radio"
+                name="buildingOptions"
+                id="buildingh"
+                value="Hospital"
+                checked={this.state.zombie_building === "Hospital"}
+                onChange={this.onChangeZombieBuilding}
+              />
+              <label className="form-check-label">Hospital</label>
+            </div>
+            <div className="form-check form-check-inline">
+              <input
+                className="from-check-input"
+                type="radio"
+                name="buildingOptions"
+                id="buildings"
+                value="School"
+                checked={this.state.zombie_building === "School"}
+                onChange={this.onChangeZombieBuilding}
+              />
+              <label className="form-check-label">School</label>
+            </div>
+            <div className="form-check form-check-inline">
+              <input
+                className="from-check-input"
+                type="radio"
+                name="buildingOptions"
+                id="buildingw"
+                value="Warehouse"
+                checked={this.state.zombie_building === "Warehouse"}
+                onChange={this.onChangeZombieBuilding}
+              />
+              <label className="form-check-label">Warehouse</label>
+            </div>
           </div>
         </form>
       </div>
