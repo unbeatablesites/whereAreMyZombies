@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-export default class ZombieList extends Component {
+export default class CreateZombie extends Component {
   render() {
     return (
       <div>
