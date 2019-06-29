@@ -10,17 +10,6 @@ export default class CreateZombie extends Component {
     this.onChangeZombieBuilding = this.onChangeZombieBuilding.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
 
-    const newZombie = {
-      zombie_description: this.state.zombie_description,
-      zombie_responsible: this.state.zombie_responsible,
-      zombie_building: this.state.zombie_building,
-      zombie_alive: this.state.zombiealive
-    };
-
-    axios
-      .post('http//localhost:4000/todos/add', newZombie)
-      .then(res => console.log(res.data));
-
     this.state = {
       zombie_description: '',
       zombie_responsible: '',
@@ -60,6 +49,18 @@ export default class CreateZombie extends Component {
       `What building is this zombie in ${this.state.zombie_building}`
     );
     console.log(`Is This zombie alive: ${this.state.zombie_alive}`);
+
+    const newZombie = {
+      zombie_description: this.state.zombie_descriptiony,
+      zombie_responsible: this.state.zombie_responsible,
+      zombie_building: this.state.zombie_building,
+      zombie_alive: this.state.zombiealive
+    };
+
+    axios
+      .post('http//localhost:4000/todos/add', newZombie)
+      .then(res => console.log(res.data));
+
     this.setState({
       zombie_description: '',
       zombie_responsible: '',
