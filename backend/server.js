@@ -43,8 +43,8 @@ zombieRoutes.route('/update/:id').post(function(req, res) {
     if (!zombie) res.status(404).send('data is not found');
     else zombie.zombie_description = req.body.zombie_description;
     zombie.zombie_responsible = req.body.zombie_responsible;
-    zombie.zombie_building = req.body.zombie_building;
     zombie.zombie_alive = req.body.zombie_alive;
+    zombie.zombie_building = req.body.zombie_building;
 
     zombie
       .save()

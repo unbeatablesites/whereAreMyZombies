@@ -12,7 +12,7 @@ let Zombie = new Schema({
     type: String
   },
   zombie_alive: {
-    tyle: Boolean
+    type: Boolean
   }
 });
 
