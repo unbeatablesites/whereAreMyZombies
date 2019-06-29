@@ -12,7 +12,7 @@ class App extends Component {
       <Router>
         <div className="container">
           <nav className="navbar navbar-expand-lg navbar-light bg-light">
-            <a classname="navbar-brand">
+            <a className="navbar-brand">
               <img
                 src={logo}
                 width="30"
