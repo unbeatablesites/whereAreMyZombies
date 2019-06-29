@@ -4,9 +4,15 @@ import axios from 'axios';
 
 const Zombie = props => (
   <tr>
-    <td>{props.zombie.zombie_description}</td>
-    <td>{props.zombie.zombie_responsible}</td>
-    <td>{props.zombie.zombie_building}</td>
+    <td className={props.zombie.zombie_dead ? 'dead' : ''}>
+      {props.zombie.zombie_description}
+    </td>
+    <td className={props.zombie.zombie_dead ? 'dead' : ''}>
+      {props.zombie.zombie_responsible}
+    </td>
+    <td className={props.zombie.zombie_dead ? 'dead' : ''}>
+      {props.zombie.zombie_building}
+    </td>
     <td>
       <Link to={'/edit/' + props.zombie._id}> Edit</Link>
     </td>
