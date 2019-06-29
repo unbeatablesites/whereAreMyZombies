@@ -12,7 +12,12 @@ class App extends Component {
       <Router>
         <div className='container'>
           <nav className='navbar navbar-expand-lg navbar-light bg-light'>
-            <a className='navbar-brand'>
+            <a
+              className='navbar-brand'
+              href='https://frankuzoka.com'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
               <img
                 src={logo}
                 width='30'
