@@ -4,13 +4,13 @@ import axios from 'axios';
 
 const Zombie = props => (
   <tr>
-    <td className={props.zombie.zombie_dead ? 'dead' : ''}>
+    <td className={props.zombie.zombie_died ? 'died' : ''}>
       {props.zombie.zombie_description}
     </td>
-    <td className={props.zombie.zombie_dead ? 'dead' : ''}>
+    <td className={props.zombie.zombie_died ? 'died' : ''}>
       {props.zombie.zombie_responsible}
     </td>
-    <td className={props.zombie.zombie_dead ? 'dead' : ''}>
+    <td className={props.zombie.zombie_died ? 'died' : ''}>
       {props.zombie.zombie_building}
     </td>
     <td>
