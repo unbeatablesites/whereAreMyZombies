@@ -27,7 +27,7 @@ export default class ZombieList extends Component {
 
   componentDidMount() {
     axios
-      .get('mongodb://Frank:Frank123@ds345597.mlab.com:45597/zombies')
+      .get('http://localhost:process.env.PORT/zombies/')
       .then(response => {
         this.setState({ zombies: response.data });
       })
@@ -38,7 +38,7 @@ export default class ZombieList extends Component {
 
   componentDidUpdate() {
     axios
-      .get('mongodb://Frank:Frank123@ds345597.mlab.com:45597/zombies')
+      .get('http://localhost:process.env.PORT/zombies/')
       .then(response => {
         this.setState({ zombies: response.data });
       })
