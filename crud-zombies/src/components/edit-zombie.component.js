@@ -8,12 +8,14 @@ export default class EditZombie extends Component {
     this.onChangeZombieDescription = this.onChangeZombieDescription.bind(this);
     this.onChangeZombieResponsible = this.onChangeZombieResponsible.bind(this);
     this.onChangeZombieBuilding = this.onChangeZombieBuilding.bind(this);
+    this.onChangeZombieDied = this.onChangeZombieDied.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
 
     this.state = {
       zombie_description: '',
       zombie_responsible: '',
-      zombie_building: ''
+      zombie_building: '',
+      zombie_died: false
     };
   }
 
@@ -24,7 +26,8 @@ export default class EditZombie extends Component {
         this.setState({
           zombie_description: response.data.zombie_description,
           zombie_responsible: response.data.zombie_responsible,
-          zombie_building: response.data.zombie_building
+          zombie_building: response.data.zombie_building,
+          zombie_died: response.data.zombie_died
         });
       })
       .catch(function(error) {
@@ -47,13 +50,19 @@ export default class EditZombie extends Component {
       zombie_building: e.target.value
     });
   }
+  onChangeZombieDied(e) {
+    this.setState({
+      zombie_died: !this.state.zombie_died
+    });
+  }
 
   onSubmit(e) {
     e.preventDefault();
     const obj = {
       zombie_description: this.state.zombie_description,
       zombie_responsible: this.state.zombie_responsible,
-      zombie_building: this.state.zombie_building
+      zombie_building: this.state.zombie_building,
+      zombie_died: this.state.zombie_died
     };
 
     console.log(obj);
@@ -125,6 +134,22 @@ export default class EditZombie extends Component {
                 onChange={this.onChangeZombieBuilding}
               />
               <label className='form-check-label'>Warehouse </label>
+            </div>
+            <br />
+            <div className='form-check'>
+              <input
+                type='checkbox'
+                className='form-check-input'
+                id='diedCheckBox'
+                name='diedCheckBox'
+                onChange={this.onChangeZombieDied}
+                checked={this.state.zombie_died}
+                value={this.state.zombie_died}
+              />
+
+              <label className='form-check-label' htmlFor='diedCheckBox'>
+                Zombie Died
+              </label>
             </div>
             <br />
             <div form-group>
