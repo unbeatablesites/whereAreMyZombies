@@ -21,7 +21,7 @@ export default class EditZombie extends Component {
 
   componentDidMount() {
     axios
-      .get('zombies' + this.props.match.params.id)
+      .get('zombies/' + this.props.match.params.id)
       .then(response => {
         this.setState({
           zombie_description: response.data.zombie_description,
@@ -67,7 +67,7 @@ export default class EditZombie extends Component {
 
     console.log(obj);
     axios
-      .post('zombies/update' + this.props.match.params.id, obj)
+      .post('zombies/update/' + this.props.match.params.id, obj)
       .then(res => console.log(res.data));
 
     this.props.history.push('/');
