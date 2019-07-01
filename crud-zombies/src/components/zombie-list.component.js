@@ -27,7 +27,7 @@ export default class ZombieList extends Component {
 
   componentDidMount() {
     axios
-      .get('http://localhost:process.env.PORT/zombies/')
+      .get('/zombies')
       .then(response => {
         this.setState({ zombies: response.data });
       })
@@ -38,7 +38,7 @@ export default class ZombieList extends Component {
 
   componentDidUpdate() {
     axios
-      .get('http://localhost:process.env.PORT/zombies/')
+      .get('/zombies')
       .then(response => {
         this.setState({ zombies: response.data });
       })
