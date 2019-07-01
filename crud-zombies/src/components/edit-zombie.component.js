@@ -67,7 +67,7 @@ export default class EditZombie extends Component {
 
     console.log(obj);
     axios
-      .post('zombiesupdate' + this.props.match.params.id, obj)
+      .post('zombies/update' + this.props.match.params.id, obj)
       .then(res => console.log(res.data));
 
     this.props.history.push('/');
