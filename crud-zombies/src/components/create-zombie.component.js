@@ -56,7 +56,7 @@ export default class CreateZombie extends Component {
       zombie_alive: this.state.zombie_alive
     };
 
-    axios.post('zombies/add', newZombie).then(res => console.log(res.data));
+    axios.post('/zombies/add', newZombie).then(res => console.log(res.data));
 
     this.setState({
       zombie_description: '',
