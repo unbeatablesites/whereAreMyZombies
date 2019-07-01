@@ -4,23 +4,19 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const zombieRoutes = express.Router();
-let Zombie = require('./zombie.model');  
+let Zombie = require('./zombie.model');
 const path = require('path');
-
-const port = process.env.PORT ||4000;
+const port = process.env.PORT || 4000;
 
 app.use(cors());
 app.use(bodyParser.json());
 
-
-
 const connection = require('./config/keys').mongoURI;
 
 mongoose
-.connect(connection)
-.then(()=> console.log('MongoDB Connected..'))
-.catch(err => console.log(err));
-
+  .connect(connection)
+  .then(() => console.log('MongoDB Connected..'))
+  .catch(err => console.log(err));
 
 zombieRoutes.route('/').get(function(req, res) {
   Zombie.find(function(err, zombies) {
@@ -72,11 +68,12 @@ zombieRoutes.route('/add').post(function(req, res) {
 
 app.use('/zombies', zombieRoutes);
 
-if(process.env.NODE_ENV === 'production'){
-  app.use(express.statis('crud-zombies/build'))
-  app.get('*'),(req,res)=>{
-      res.send(path.resolve(__dirname,'crud-zombies','build'),'index.html')
-  }
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('crud-zombies/build'));
+  app.get('*'),
+    (req, res) => {
+      res.send(path.resolve(__dirname, 'crud-zombies', 'build'), 'index.html');
+    };
 }
 
 app.listen(port, function() {
